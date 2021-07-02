@@ -18,9 +18,8 @@ def predict():
         #get form data
         words = request.form.get('words')
         likes = request.form.get('likes')
-        time = request.form.get('time')
 
-        data = {'tweets':[words], 'likes':[likes], 'time':[time]}
+        data = {'tweets':[words], 'likes':[likes]}
         #call preprocessDataAndPredict and Pass inputs
         prediction = preprocessDataAndPredict(data)
         #pass prediction to template
@@ -30,37 +29,10 @@ def predict():
 def preprocessDataAndPredict(data):
     test_data = pd.DataFrame(data)    
 
-    #create a function to clean the texts
-    import re
-    def cleanTxt(text):
-        text=re.sub(r'@[A-Za-z0-9]+ ,','',text)#removed @mentions
-        text=re.sub(r'#','',text) #removing the #symbol
-        text=re.sub(r'RT[\s]+','',text)#removing RT
-        text=re.sub(r'https?:\/\/\S+','',text)#remove the hyper link
-
-        return text
-
-    # cleaning the tweets
-    test_data['tweets']=test_data['tweets'].apply(cleanTxt)
-
-    #create a function to get the subjectivity
-    def getSubjectivity(text):
-        return TextBlob(text).sentiment.subjectivity
-
-    #create a function to get the polarity
-    def getPolarity(text) :
-        return     TextBlob(text).sentiment.polarity
-
-    #create two new columns
-    test_data['Subjectivity']=test_data['tweets'].apply(getSubjectivity)
-    test_data['Polarity']=test_data['tweets'].apply(getPolarity)
-
-    #create a function to compute the negative, positive and neutral sentiments
 
     test_data['tweets'],_=pd.factorize(test_data['tweets'])
     test_data['likes'],_=pd.factorize(test_data['likes'])
-    test_data['time'],_=pd.factorize(test_data['time'])
-    test_data['Polarity'],_=pd.factorize(test_data['Polarity'])
+
 
     with open('DecisionTree.plk', 'rb') as file:  
         trained_model = pickle.load(file)
