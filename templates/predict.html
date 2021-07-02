@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prediction</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        {% block content %}
+        <h1 align="center">Twitter Sentiment Analysis Tool</h1>
+        <div class="haha">
+            <div class="sentiment-show">
+                <h2>Sentiment Prediction is: </h2>
+                <div class="negative">
+                    {% if prediction < 0 %}
+                    <label><h1 class="sentiment-negative">Negative</h1></label>
+                    {% endif %}
+                </div>
+ 
+                <div class="neutral">
+                    {% if prediction == 0 %}
+                    <label><h1 class="sentiment-neutral">Neutral</h1></label>
+                    {% endif %}
+                </div>
+
+
+                <div class="positive">
+                    {% if prediction > 0 %}
+                    <label><h1 class="sentiment-positive">Positive</h1></label>
+                    {% endif %}
+                </div>
+            </div>
+
+            <br><a href="{{ url_for('home') }}" class="link" ><p>Click Me For More Predictions</p></a>
+        </div>
+
+        {% endblock %}
+    </body>
+</html>
+    

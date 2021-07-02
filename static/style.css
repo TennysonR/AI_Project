@@ -1,0 +1,181 @@
+.header{
+    text-align: center;
+}
+
+.form-container{
+    position:relative;
+    top: 100px;
+}
+
+.form{
+	max-width: 500px;
+	padding: 10px 20px;
+	background: #85aab6;
+	margin: 10px auto;
+	padding: 20px;
+	background: #aaaaaa;
+	border-radius: 8px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form fieldset{
+	border: none;
+}
+.form legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+.form label {
+	display: block;
+	margin-bottom: 8px;
+}
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="datetime"]{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(71, 71, 71, 0.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 18px;
+	margin: 0;
+	outline: 0;
+	padding: 7px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #ffffff;
+	color:#000000;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+	
+}
+.form input[type="text"]:focus {
+	background: #d2d9dd;
+}
+.form select{
+	-webkit-appearance: menulist-button;
+	height:35px;
+}
+.form .number {
+	background: #1abc9c;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+.form input[type="submit"],
+.form input[type="button"]
+{
+	position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: #1abc9c;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	width: 100%;
+	border: 1px solid #16a085;
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
+.form input[type="submit"]:hover,
+.form input[type="button"]:hover
+{
+	background: #109177;
+}
+
+.sentiment-show{
+    max-width: 500px;
+    height: 200px;
+    position: relative;
+    top: 100px;
+	padding: 10px 20px;
+	background: #85aab6;
+	margin: 10px auto;
+	padding: 20px;
+	background: #aaaaaa;
+	border-radius: 8px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.sentiment-neutral{
+    position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: rgb(22, 115, 255);
+	font-size: 28px;
+	text-align: center;
+	font-style: normal;
+	width: 50%;
+	border: 3px solid rgb(22, 115, 255)5;
+	border-width: 3px 3px 3px;
+	margin-bottom: 10px;   
+}
+
+.sentiment-positive{
+    position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: rgb(49, 255, 22);
+	font-size: 28px;
+	text-align: center;
+	font-style: normal;
+	width: 50%;
+	border: 3px solid rgb(22, 115, 255)5;
+	border-width: 3px 3px 3px;
+	margin-bottom: 10px;   
+}
+
+.sentiment-negative{
+    position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: rgb(255, 46, 9);
+	font-size: 28px;
+	text-align: center;
+	font-style: normal;
+	width: 50%;
+	border: 3px solid rgb(22, 115, 255)5;
+	border-width: 3px 3px 3px;
+	margin-bottom: 10px;   
+}
+
+.link{
+    position: relative;
+    top: 100px;
+    text-align: center;   
+    color: rgb(22, 115, 255);
+    width:auto;
+}
+
+/* visited link */
+.link:visited {
+    color: rgb(22, 115, 255);
+  }
+  
+  /* mouse over link */
+.link:hover {
+    color: hotpink;
+  }
+  
+  /* selected link */
+.link:active {
+    color: blue;
+}

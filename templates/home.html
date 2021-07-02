@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        {% block content %}
+        <h1 class="header">Twitter Sentiment Analysis Tool</h1>
+
+        <div class = "form-container">
+            <form action="/predict/" method="POST" class="form">
+                <fieldset>
+                    <legend><span class="number">1</span>Words for analysis</legend>
+                    <input type="text" name="words" placeholder="Enter words here" required/>
+                    <input type="number" name="likes" placeholder="Enter likes here" required/>
+                    <input type="datetime" name="time" placeholder="Enter time here in format *yyyy-mm-dd HH:MM:SS*" required/>
+                </fieldset>  
+                <input type="submit" value="Predict" />  
+            </form>
+        </div>
+        {% endblock %}
+    </body>
+</html>
